@@ -1,0 +1,70 @@
+clc;
+clear;
+close all;
+
+%% 1. กำหนดสัญญาณ Discrete
+N = 201;
+n = 0:N-1;
+fs = 100;
+t = n/fs;
+
+rng(1);  % ให้ Noise เหมือนเดิมทุกครั้งที่รัน
+
+%% 2. สร้างสัญญาณจริง (Sine Wave 1 Hz)
+s = sin(2*pi*1*t);
+
+%% 3. สร้าง Random Noise (Gaussian Noise)
+noise = 0.5*randn(1,N);
+
+%% 4. สร้างสัญญาณ Input
+x = s + noise;
+
+%% 5. ออกแบบ Low-pass Butterworth Filter
+fc = 3;  % Cutoff Frequency (Hz)
+[b,a] = butter(4, fc/(fs/2), 'low');
+
+%% 6. กรองสัญญาณ Discrete
+y = filter(b, a, x);
+
+%% 7. กราฟที่ 1: สัญญาณจริง
+figure(1);
+stem(n, s, 'g', 'filled');
+title('Original Signal s[n]');
+xlabel('Sample Index n');
+ylabel('Amplitude');
+grid on;
+
+%% 8. กราฟที่ 2: สัญญาณ Input ที่มี Random Noise
+figure(2);
+h = stem(n, x, 'filled');
+h.Color = [0.7 0.7 0.7];
+h.MarkerFaceColor = [0.7 0.7 0.7];
+title('Input Signal x[n] = s[n] + Random Noise');
+xlabel('Sample Index n');
+ylabel('Amplitude');
+grid on;
+
+%% 9. กราฟที่ 3: สัญญาณหลังกรอง
+figure(3);
+stem(n, y, 'b', 'filled');
+title('Low-pass Filter Output y[n]');
+xlabel('Sample Index n');
+ylabel('Amplitude');
+grid on;
+
+%% 10. กราฟที่ 4: เปรียบเทียบสัญญาณทั้งหมด
+figure(4);
+plot(n, s, 'g', 'LineWidth', 1.5);
+hold on;
+plot(n, x, 'Color', [0.7 0.7 0.7], 'LineWidth', 1);
+plot(n, y, 'b', 'LineWidth', 1.5);
+
+legend('Original Signal', ...
+    'Input with Random Noise', ...
+    'Filtered Output');
+
+xlabel('Sample Index n');
+ylabel('Amplitude');
+title('Low-pass Filter with Random Noise');
+grid on;
+hold off;
