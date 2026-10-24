@@ -102,4 +102,6 @@ This project was developed as part of a Signal Processing mini-project.
 
 - Mr. Narongchai Vongsa-ad 67050552
 
+- Miss Nalinnipha Deepromphun 67050558
+
 - Miss Waritsar Pungtui 67050576
