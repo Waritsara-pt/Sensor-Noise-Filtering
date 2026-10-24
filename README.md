@@ -12,63 +12,63 @@ The system is developed using MATLAB and is designed to support experiments with
 
 ## Objectives
 
-Study the characteristics of noise in sensor signals.
+- Study the characteristics of noise in sensor signals.
 
-Implement and compare different digital filtering techniques.
+- Implement and compare different digital filtering techniques.
 
-Develop a MATLAB-based workflow for analyzing and filtering sensor data.
+- Develop a MATLAB-based workflow for analyzing and filtering sensor data.
 
-Experiment with simulated signals and real-world sensor measurements.
+- Experiment with simulated signals and real-world sensor measurements.
 
-Evaluate filtering performance through signal visualization and comparison.
+- Evaluate filtering performance through signal visualization and comparison.
 
 ## Filtering Techniques
 
 The project explores the following digital filters:
 
-Moving Average Filter — smooths short-term fluctuations in a signal.
+- Moving Average Filter — smooths short-term fluctuations in a signal.
 
-Median Filter — helps reduce impulse noise and outliers.
+- Median Filter — helps reduce impulse noise and outliers.
 
-Low-Pass Filter — attenuates high-frequency components.
+- Low-Pass Filter — attenuates high-frequency components.
 
-High-Pass Filter — attenuates low-frequency components.
+- High-Pass Filter — attenuates low-frequency components.
 
 The filtering methods can be evaluated individually or in different sequences to investigate their effects on the output signal.
 
 ## Hardware
 
-ESP32 microcontroller
+- ESP32 microcontroller
 
-MAX30102 pulse oximeter and heart-rate sensor
+- MAX30102 pulse oximeter and heart-rate sensor
 
-MPU6050 accelerometer and gyroscope
+- MPU6050 accelerometer and gyroscope
 
-TCS34725 RGB color sensor
+- TCS34725 RGB color sensor
 
 ## Software and Tools
 
-MATLAB — signal processing, filtering, and visualization
+- MATLAB — signal processing, filtering, and visualization
 
-Arduino IDE — ESP32 programming and sensor data acquisition
+- Arduino IDE — ESP32 programming and sensor data acquisition
 
-VS code — serial data collection and CSV file generation
+- Visual Studio Code (VS Code) — serial data collection and CSV file generation
 
-Git and GitHub — version control and project documentation
+- Git and GitHub — version control and project documentation
 
 ## Workflow
 
-Collect sensor data using the ESP32.
+1. Collect sensor data using the ESP32.
 
-Export the recorded measurements to CSV files.
+2. Export the recorded measurements to CSV files.
 
-Import the data into MATLAB.
+3. Import the data into MATLAB.
 
-Analyze the raw signals and identify potential noise characteristics.
+4. Analyze the raw signals and identify potential noise characteristics.
 
-Apply digital filters to the input signals.
+5. Apply digital filters to the input signals.
 
-Compare the raw and filtered signals using plots and relevant measurements.
+6. Compare the raw and filtered signals using plots and relevant measurements.
 
 ## Project Status
 
@@ -80,15 +80,15 @@ The project is being developed through simulated signal experiments and real sen
 
 The repository may include the following components as development progresses:
 
-matlab/ — MATLAB scripts for signal analysis and filtering
+- matlab/ — MATLAB scripts for signal analysis and filtering
 
-arduino/ — ESP32 firmware for sensor data acquisition
+- arduino/ — ESP32 firmware for sensor data acquisition
 
-python/ — scripts for recording sensor data to CSV
+- python/ — scripts for recording sensor data to CSV
 
-data/ — sample datasets for experiments
+- data/ — sample datasets for experiments
 
-results/ — plots and experimental results
+- results/ — plots and experimental results
 
 ## Authors
 
