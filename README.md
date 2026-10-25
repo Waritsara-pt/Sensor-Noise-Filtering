@@ -106,4 +106,4 @@ This project was developed as part of a Signal Processing mini-project.
 
 - Miss Pimlapat Suwanyanon 67050565
 
-- Miss Waritsar Pungtui 67050576
+- Miss Waritsara Pungtui 67050576
