@@ -75,13 +75,10 @@ x = inputSignals(choice,:);
 signalName = signalNames{choice};
 
 %% 3. MOVING AVERAGE FILTER
-% Moving Average only; window size M = 7
+% Moving Average; window size M = 7
 M = 7;
-y = zeros(1,N);
 
-for k = M:N
-    y(k) = sum(x(k-M+1:k))/M;
-end
+y = movmean(x, M);
 
 
 %% 4. MSE CALCULATION
@@ -165,7 +162,7 @@ grid on;
 title(['Raw vs Filtered: ' signalName]);
 xlabel('Time (s)');
 ylabel('Amplitude');
-legend('Noisy Input','Filtered Output','Clean Signal', ...
+legend('Noisy Input','Filtered Output', ...
        'Location','best');
 
 sgtitle('Moving Average Filter System');
