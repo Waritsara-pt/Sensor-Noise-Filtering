@@ -48,7 +48,7 @@ signalNames = {
     'Step + Random Noise'
     'Sine + Spike Noise'
     'Sine + Low-frequency Drift'
-    'Sine + High-frequency Noise + Spike Noise'
+    'Spike + High-frequency Noise'
 };
 
 %% 2. SELECT INPUT SIGNAL
@@ -60,7 +60,7 @@ fprintf('2. Sine + High-frequency Noise\n');
 fprintf('3. Step + Random Noise\n');
 fprintf('4. Sine + Spike Noise\n');
 fprintf('5. Sine + Low-frequency Drift\n');
-fprintf('6. Sine + High-frequency Noise + Spike Noise\n');
+fprintf('6. Spike + High-frequency Noise\n');
 
 choice = input('Select signal (1-6): ');
 
@@ -77,11 +77,8 @@ signalName = signalNames{choice};
 %% 3. MEDIAN FILTER
 % Median Filter; window size M = 7
 M = 7;
-y = zeros(1,N);
 
-for k = M:N
-    y(k) = median(x(k-M+1:k));
-end
+y = movmedian(x, M);
 
 %% 4. MSE CALCULATION
 mseBefore = mean((x - s).^2);
