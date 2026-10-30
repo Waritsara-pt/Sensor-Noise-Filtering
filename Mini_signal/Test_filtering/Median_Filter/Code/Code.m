@@ -93,9 +93,9 @@ fprintf('MSE Before Filtering = %.6f\n', mseBefore);
 fprintf('MSE After Filtering  = %.6f\n', mseAfter);
 
 if mseAfter < mseBefore
-    fprintf('Result: Moving Average filter reduced the MSE.\n');
+    fprintf('Result: Median filter reduced the MSE.\n');
 elseif mseAfter > mseBefore
-    fprintf('Result: Moving Average filter increased the MSE.\n');
+    fprintf('Result: Median filter increased the MSE.\n');
 else
     fprintf('Result: MSE remained unchanged.\n');
 end
